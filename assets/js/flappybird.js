@@ -1,8 +1,8 @@
 
 //  screen
 let screen;
-let screenWidth = 560;
-let screenHeight = 685;
+let screenWidth = window.screen.width >= 641 ? window.innerWidth / 3 : window.innerWidth;
+let screenHeight = window.innerHeight;
 let context;
 
 //  bird
@@ -44,20 +44,21 @@ window.onload = function() {
     context = screen.getContext("2d"); 
 
     birdImage = new Image();
-    birdImage.src = "./images/flappybird.png";
+    birdImage.src = "./assets/images/flappybird.png";
     birdImage.onload = function() {
         context.drawImage(birdImage, bird.x, bird.y, bird.width, bird.height);
     }
 
     topPipeImg = new Image();
-    topPipeImg.src = "./images/toppipe.png";
+    topPipeImg.src = "./assets/images/toppipe.png";
 
     bottomPipeImg = new Image();
-    bottomPipeImg.src = "./images/bottompipe.png";
+    bottomPipeImg.src = "./assets/images/bottompipe.png";
 
     requestAnimationFrame(update);
     setInterval(placePipes, 1500); // placer les tuyaux
     document.addEventListener("keydown", moveBird);
+    document.addEventListener("mousedown", moveBird);
 }
 
 function update() {
@@ -141,7 +142,7 @@ function placePipes() {
 }
 
 function moveBird(e) {
-    if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX") {
+    if (e.code == "Space" || e.code == "ArrowUp" || e.code == "KeyX" || e.which == 1) {
         velocityY = -6;
 
         if (gameOver) {

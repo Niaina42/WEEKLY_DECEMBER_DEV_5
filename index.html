@@ -1,13 +1,47 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport", content="width=device-width, initial-scale=1.0">
-        <title>Flappy Bird</title>
-        <link rel="stylesheet" href="assets/flappybird.css">
-        <script src="flappybird.js"></script>
-    </head>
-    <body>
-        <canvas id="screen"></canvas>
-    </body>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flappy Bird</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
+  </head>
+  <body>
+    <div class="screen-box">
+      <div class="row mt-4">
+        <div class="col-md-12 d-flex justify-content-center">
+          <h3 class="title">Bienvenue sur Flappy Bird</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 mt-5">
+          <div class="flappy-card">
+            <div
+              class="header d-flex justify-content-between mb-4 align-items-center"
+            >
+              <h4>Règle de jeu</h4>
+              <a href="flappy-game.html" class="btn btn-success"> Jouer </a>
+            </div>
+            <ul>
+              <li>
+                Pour faire voler Flappy, appuyez sur les touches : espace,
+                flèche haut du clavier, touche X du clavier ou clic gauche de la
+                souris.
+              </li>
+              <li>
+                Pour rejouer après le Game Over, appuyez également sur l'une de
+                ces touches.
+              </li>
+              <li>
+                La difficulté va augmenter à chaque score multiple de 5, la
+                vitesse va accélérer deux fois plus rapidement.
+              </li>
+            </ul>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

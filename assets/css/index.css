@@ -1,0 +1,73 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background-color: rgb(41, 41, 41);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.screen-box {
+    width: 33.33vw;
+    height: 100vh;
+    padding: 5px;
+    background-image: url("../images/flappybirdbg.png");
+}
+
+.title {
+    font-size: 18px;
+    background-color: #e76200;
+    color: white;
+    font-weight: bold;
+    width: 50%;
+    padding: 5px;
+    border: 5px solid white;
+    box-shadow: -9px 12px 0 -1px #543101;
+}
+
+.flappy-card {
+    padding: 10px;
+    background-color: #ded996;
+    border: 1px solid #543101;
+    border-radius: 5px;
+    text-align: left;
+    /* width: 50%; */
+}
+
+.btn-success {
+    background-color: #e76105;
+    border-color: #543101;
+    font-weight: bold;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    background-color: #aa4806;
+    outline: none;
+    box-shadow: none;
+}
+
+.flappy-card h4 {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.flappy-card li {
+    font-size: 13.5px;
+}
+
+ol,
+ul {
+    padding-left: 1rem;
+}
+
+ul li {
+
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width: 641px) {
+    .screen-box {
+        width: 100% !important;
+    }
+}
