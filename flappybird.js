@@ -35,7 +35,7 @@ let gravity = 0.4;
 
 let gameOver = false;
 let score = 0;
-let bestScore = 0;
+let bestScore = localStorage.flappyBestScore || 0;
 
 window.onload = function() {
     screen = document.getElementById("screen");
@@ -56,7 +56,7 @@ window.onload = function() {
     bottomPipeImg.src = "./images/bottompipe.png";
 
     requestAnimationFrame(update);
-    setInterval(placePipes, 1500); // placer les tyaux
+    setInterval(placePipes, 1500); // placer les tuyaux
     document.addEventListener("keydown", moveBird);
 }
 
@@ -84,6 +84,8 @@ function update() {
 
         if (!pipe.passed && bird.x > pipe.x + pipe.width) {
             score += 0.5; 
+            // increment dificulty
+            if(score%5 == 0) velocityX += -2;
             pipe.passed = true;
         }
 
@@ -143,10 +145,14 @@ function moveBird(e) {
         velocityY = -6;
 
         if (gameOver) {
-            if(score > bestScore) bestScore = score
+            if(score > bestScore) {
+                bestScore = score
+                localStorage.flappyBestScore = score
+            }
             // reset game
             bird.y = positionY;
             pipeList = [];
+            velocityX = -2;
             score = 0;
             gameOver = false;
         }
